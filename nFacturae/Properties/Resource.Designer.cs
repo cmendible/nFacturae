@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace nFacturae.Properties {
-    using System;
-    
-    
+namespace nFacturae.Properties
+{
+
+
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -62,6 +62,20 @@ namespace nFacturae.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;xs:schema xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns=&quot;http://www.facturae.es/Facturae/2007/v3.1/Facturae&quot; targetNamespace=&quot;http://www.facturae.es/Facturae/2007/v3.1/Facturae&quot; version=&quot;3.1&quot;&gt;
+        ///	&lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;xmldsig-core-schema.xsd&quot;/&gt;
+        ///	&lt;xs:element name=&quot;Facturae&quot;&gt;
+        ///		&lt;xs:annotation&gt;
+        ///			&lt;xs:documentation xml:lang=&quot;en&quot;&gt; Element ORIGIN of Facturae Invoices Fi [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Facturaev3_1 {
+            get {
+                return ResourceManager.GetString("Facturaev3_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
         ///&lt;xs:schema xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns=&quot;http://www.facturae.es/Facturae/2009/v3.2/Facturae&quot; targetNamespace=&quot;http://www.facturae.es/Facturae/2009/v3.2/Facturae&quot; version=&quot;3.2&quot;&gt;
         ///	&lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;http://www.w3.org/TR/xmldsig-core/xmldsig-core-schema.xsd&quot;/&gt;
         ///	&lt;xs:element name=&quot;Facturae&quot;&gt;
@@ -71,20 +85,6 @@ namespace nFacturae.Properties {
         internal static string Facturaev3_2 {
             get {
                 return ResourceManager.GetString("Facturaev3_2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-        ///&lt;xs:schema xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns=&quot;http://www.facturae.es/Facturae/2007/v3.1/Facturae&quot; targetNamespace=&quot;http://www.facturae.es/Facturae/2007/v3.1/Facturae&quot; version=&quot;3.1&quot;&gt;
-        ///	&lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;xmldsig-core-schema.xsd&quot;/&gt;
-        ///	&lt;xs:element name=&quot;Facturae&quot;&gt;
-        ///		&lt;xs:annotation&gt;
-        ///			&lt;xs:documentation xml:lang=&quot;en&quot;&gt; Element ORIGIN of Facturae Invoices Fi [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string Facturaev31 {
-            get {
-                return ResourceManager.GetString("Facturaev31", resourceCulture);
             }
         }
         

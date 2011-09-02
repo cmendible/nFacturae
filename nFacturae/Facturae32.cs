@@ -1,12 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace nFacturae.Facturae32
 {
-    public partial class Facturae
+    public partial class Facturae : BaseFacturae<Facturae>
     {
+        public Facturae()
+        {
+
+        }
+
         public Facturae(string reference, DateTime issueDate)
         { 
 

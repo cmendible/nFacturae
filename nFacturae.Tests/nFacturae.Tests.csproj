@@ -53,7 +53,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Samples\sample_31.xml" />
+    <Content Include="Samples\sample_31.xml">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Samples\sample_32.xml" />
