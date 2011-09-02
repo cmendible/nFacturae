@@ -223,19 +223,110 @@
     <Compile Include="Fe31\UnitOfMeasureType.cs" />
     <Compile Include="Fe31\X509DataType.cs" />
     <Compile Include="Fe31\X509IssuerSerialType.cs" />
+    <Compile Include="Fluent\FluentFacturae32.cs" />
+    <Compile Include="Fluent\FluentFacturae31.cs" />
     <Compile Include="Properties\Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Fe32\AccountType.cs" />
+    <Compile Include="Fe32\AdditionalDataType.cs" />
+    <Compile Include="Fe32\AddressType.cs" />
+    <Compile Include="Fe32\AdministrativeCentreType.cs" />
+    <Compile Include="Fe32\AmountsWithheldType.cs" />
+    <Compile Include="Fe32\AmountType.cs" />
+    <Compile Include="Fe32\AssigneeType.cs" />
+    <Compile Include="Fe32\AttachmentCompressionAlgorithmType.cs" />
+    <Compile Include="Fe32\AttachmentEncodingType.cs" />
+    <Compile Include="Fe32\AttachmentFormatType.cs" />
+    <Compile Include="Fe32\AttachmentType.cs" />
+    <Compile Include="Fe32\BatchType.cs" />
+    <Compile Include="Fe32\BusinessType.cs" />
+    <Compile Include="Fe32\CanonicalizationMethodType.cs" />
+    <Compile Include="Fe32\ChargeType.cs" />
+    <Compile Include="Fe32\ContactDetailsType.cs" />
+    <Compile Include="Fe32\CorrectionMethodDescriptionType.cs" />
+    <Compile Include="Fe32\CorrectionMethodType.cs" />
+    <Compile Include="Fe32\CorrectiveType.cs" />
+    <Compile Include="Fe32\CountryType.cs" />
+    <Compile Include="Fe32\CurrencyCodeType.cs" />
+    <Compile Include="Fe32\DeliveryNoteType.cs" />
+    <Compile Include="Fe32\DigestMethodType.cs" />
+    <Compile Include="Fe32\DiscountType.cs" />
+    <Compile Include="Fe32\DSAKeyValueType.cs" />
+    <Compile Include="Fe32\ExchangeRateDetailsType.cs" />
+    <Compile Include="Fe32\ExtensionsType.cs" />
+    <Compile Include="Fe32\FactoringAssignmentDataType.cs" />
+    <Compile Include="Fe32\Facturae.cs" />
+    <Compile Include="Fe32\FileHeaderType.cs" />
+    <Compile Include="Fe32\IndividualType.cs" />
+    <Compile Include="Fe32\InstallmentType.cs" />
+    <Compile Include="Fe32\InvoiceClassType.cs" />
+    <Compile Include="Fe32\InvoiceDocumentTypeType.cs" />
+    <Compile Include="Fe32\InvoiceHeaderType.cs" />
+    <Compile Include="Fe32\InvoiceIssueDataType.cs" />
+    <Compile Include="Fe32\InvoiceIssuerTypeType.cs" />
+    <Compile Include="Fe32\InvoiceLineType.cs" />
+    <Compile Include="Fe32\InvoiceLineTypeTax.cs" />
+    <Compile Include="Fe32\InvoiceTotalsType.cs" />
+    <Compile Include="Fe32\InvoiceType.cs" />
+    <Compile Include="Fe32\ItemChoiceType.cs" />
+    <Compile Include="Fe32\ItemsChoiceType.cs" />
+    <Compile Include="Fe32\ItemsChoiceType1.cs" />
+    <Compile Include="Fe32\ItemsChoiceType2.cs" />
+    <Compile Include="Fe32\KeyInfoType.cs" />
+    <Compile Include="Fe32\KeyValueType.cs" />
+    <Compile Include="Fe32\LanguageCodeType.cs" />
+    <Compile Include="Fe32\LegalEntityType.cs" />
+    <Compile Include="Fe32\ModalityType.cs" />
+    <Compile Include="Fe32\ObjectType.cs" />
+    <Compile Include="Fe32\OverseasAddressType.cs" />
+    <Compile Include="Fe32\PartiesType.cs" />
+    <Compile Include="Fe32\PaymentMeansType.cs" />
+    <Compile Include="Fe32\PaymentOnAccountType.cs" />
+    <Compile Include="Fe32\PeriodDates.cs" />
+    <Compile Include="Fe32\PersonTypeCodeType.cs" />
+    <Compile Include="Fe32\PGPDataType.cs" />
+    <Compile Include="Fe32\PlaceOfIssueType.cs" />
+    <Compile Include="Fe32\ReasonCodeType.cs" />
+    <Compile Include="Fe32\ReasonDescriptionType.cs" />
+    <Compile Include="Fe32\ReferenceType.cs" />
+    <Compile Include="Fe32\RegistrationDataType.cs" />
+    <Compile Include="Fe32\ReimbursableExpensesType.cs" />
+    <Compile Include="Fe32\ResidenceTypeCodeType.cs" />
+    <Compile Include="Fe32\RetrievalMethodType.cs" />
+    <Compile Include="Fe32\RoleTypeCodeType.cs" />
+    <Compile Include="Fe32\RSAKeyValueType.cs" />
+    <Compile Include="Fe32\SchemaVersionType.cs" />
+    <Compile Include="Fe32\SignatureMethodType.cs" />
+    <Compile Include="Fe32\SignatureType.cs" />
+    <Compile Include="Fe32\SignatureValueType.cs" />
+    <Compile Include="Fe32\SignedInfoType.cs" />
+    <Compile Include="Fe32\SpecialTaxableEventCodeType.cs" />
+    <Compile Include="Fe32\SpecialTaxableEventType.cs" />
+    <Compile Include="Fe32\SPKIDataType.cs" />
+    <Compile Include="Fe32\SubsidyType.cs" />
+    <Compile Include="Fe32\TaxIdentificationType.cs" />
+    <Compile Include="Fe32\TaxOutputType.cs" />
+    <Compile Include="Fe32\TaxType.cs" />
+    <Compile Include="Fe32\TaxTypeCodeType.cs" />
+    <Compile Include="Fe32\ThirdPartyType.cs" />
+    <Compile Include="Fe32\TransformType.cs" />
+    <Compile Include="Fe32\UnitOfMeasureType.cs" />
+    <Compile Include="Fe32\X509DataType.cs" />
+    <Compile Include="Fe32\X509IssuerSerialType.cs" />
     <Compile Include="Signer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Fe31\Schemas\Facturaev31.xsd">
+    <None Include="Schemas\Facturaev31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Fe31\Schemas\xmldsig-core-schema.xsd">
+    <None Include="Schemas\Facturaev3_2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\xmldsig-core-schema.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

@@ -14,8 +14,10 @@ namespace nFacturae
         /// </summary>
         static void Main()
         {
-            var signer = new nFacturae.Facturae31.Signer();
-            signer.Sign(@"..\..\Samples\sample_31.xml", "signed.xml", "certificate.pfx", "password");
+            var signer = new nFacturae.Facturae.Signer();
+            signer.Sign(@"..\..\Samples\sample_31.xml", "signed31.xml", "certificate.pfx", "password");
+
+            signer.Sign(@"..\..\Samples\sample_32.xml", "signed32.xml", "certificate.pfx", "password");
         }
     }
 }

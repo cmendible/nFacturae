@@ -13,7 +13,7 @@ using es.mityc.javasign.xml.refs;
 using es.mityc.firmaJava.libreria.utilidades;
 using org.w3c.dom;
 
-namespace nFacturae.Facturae31
+namespace nFacturae.Facturae
 {
     public class PassStoreKS : IPassStoreKS
     {
