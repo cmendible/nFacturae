@@ -140,8 +140,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseFacturae.cs" />
-    <Compile Include="Facturae32.cs" />
-    <Compile Include="Facturae31.cs" />
+    <Compile Include="Facturae32\Facturae.cs" />
+    <Compile Include="Facturae31\Facturae.cs" />
+    <Compile Include="Facturae32\InvoiceLineType.cs" />
+    <Compile Include="Facturae32\InvoiceType.cs" />
     <Compile Include="Properties\Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
