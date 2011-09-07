@@ -55,6 +55,11 @@ namespace nFacturae
     [Serializable]
     public class DoubleTwoDecimalType : BaseDoubleType
     {
+        public DoubleTwoDecimalType()
+            : base()
+        { 
+        }
+
         public DoubleTwoDecimalType(double value)
             : base(value)
         {
@@ -69,6 +74,11 @@ namespace nFacturae
     [Serializable]
     public class DoubleFourDecimalType : BaseDoubleType
     {
+        public DoubleFourDecimalType()
+            : base()
+        { 
+        }
+
         public DoubleFourDecimalType(double value)
             : base(value)
         {
@@ -83,6 +93,11 @@ namespace nFacturae
     [Serializable]
     public class DoubleSixDecimalType : BaseDoubleType
     {
+        public DoubleSixDecimalType()
+            : base()
+        { 
+        }
+
         public DoubleSixDecimalType(double value)
             : base(value)
         {
