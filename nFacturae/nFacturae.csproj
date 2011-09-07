@@ -140,6 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseFacturae.cs" />
+    <Compile Include="DoubleType.cs" />
     <Compile Include="Facturae32\Facturae.cs" />
     <Compile Include="Facturae31\Facturae.cs" />
     <Compile Include="Facturae32\InvoiceLineType.cs" />

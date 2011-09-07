@@ -17,9 +17,9 @@ namespace nFacturae.Facturae32
 
             batch.InvoicesCount = 0;
             batch.BatchIdentifier = string.Empty;
-            batch.TotalInvoicesAmount = new AmountType() { TotalAmount = 0.00 };
-            batch.TotalOutstandingAmount = new AmountType() { TotalAmount = 0.00 };
-            batch.TotalExecutableAmount = new AmountType() { TotalAmount = 0.00 };
+            batch.TotalInvoicesAmount = new AmountType() { TotalAmount = new DoubleTwoDecimalType(0.00) };
+            batch.TotalOutstandingAmount = new AmountType() { TotalAmount = new DoubleTwoDecimalType(0.00) };
+            batch.TotalExecutableAmount = new AmountType() { TotalAmount = new DoubleTwoDecimalType(0.00) };
             batch.InvoiceCurrencyCode = CurrencyCodeType.EUR;
 
             this.FileHeader = fileHeader;
@@ -114,8 +114,12 @@ namespace nFacturae.Facturae32
 
             this.FileHeader.Batch.InvoicesCount += 1;
 
-            //invoice.InvoiceIssueData.InvoicingPeriod = new PeriodDates() { StartDate = invoicingPeriodStartDate, EndDate = invoicingPeriodEndDate };
+            this.FileHeader.Batch.TotalInvoicesAmount.TotalAmount.Value += invoiceType.InvoiceTotals.InvoiceTotal;
+            this.FileHeader.Batch.TotalOutstandingAmount.TotalAmount.Value += invoiceType.InvoiceTotals.InvoiceTotal;
+            this.FileHeader.Batch.TotalExecutableAmount.TotalAmount.Value += invoiceType.InvoiceTotals.InvoiceTotal;
+
             return this;
         }
     }
+
 }

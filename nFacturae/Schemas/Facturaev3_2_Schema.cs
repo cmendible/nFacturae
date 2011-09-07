@@ -2603,8 +2603,8 @@ namespace nFacturae.Facturae32
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.facturae.es/Facturae/2009/v3.2/Facturae")]
     public partial class AmountType {
-        
-        private double totalAmountField;
+
+        private DoubleTwoDecimalType totalAmountField;
         
         private double equivalentInEurosField;
         
@@ -2612,7 +2612,8 @@ namespace nFacturae.Facturae32
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public double TotalAmount {
+        public DoubleTwoDecimalType TotalAmount
+        {
             get {
                 return this.totalAmountField;
             }

@@ -7,13 +7,13 @@ namespace nFacturae.Facturae32
 {
     public partial class InvoiceLineType
     {
-        public InvoiceLineType AddRequiredFields(string itemDescription, double quantity, double unitPriceWithoutTax, double grossAmount)
+        public InvoiceLineType Item(string itemDescription, double quantity, double unitPriceWithoutTax)
         {
             this.ItemDescription = itemDescription;
             this.Quantity = quantity;
             this.UnitPriceWithoutTax = unitPriceWithoutTax;
             this.TotalCost = quantity * unitPriceWithoutTax;
-            this.GrossAmount = grossAmount;
+            this.GrossAmount = this.TotalCost;
 
             return this;
         }
@@ -26,7 +26,7 @@ namespace nFacturae.Facturae32
             var tax = new InvoiceLineTypeTax();
             tax.TaxTypeCode = taxTypeCode;
             tax.TaxRate = taxRate;
-            tax.TaxableBase = new AmountType() { TotalAmount = taxableBase };
+            tax.TaxableBase = new AmountType() { TotalAmount = new DoubleTwoDecimalType(taxableBase) };
 
             var taxes = new List<InvoiceLineTypeTax>(this.TaxesOutputs);
             taxes.Add(tax);
