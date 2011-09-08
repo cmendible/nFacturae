@@ -32,7 +32,8 @@ namespace nFacturae
                     {
                         i.HeatherAndIssueData("231418", Facturae32.InvoiceDocumentTypeType.FA,
                             Facturae32.InvoiceClassType.OO, DateTime.Now, Facturae32.CurrencyCodeType.EUR, Facturae32.LanguageCodeType.es)
-                        .AddLine(l => l.Item("Item Description", 1, 2000).AddTax(Facturae32.TaxTypeCodeType.Item01, 16, 2000));  
+                        .AddLine(l => l.Item("Item Description", 1, 2000).AddTax(Facturae32.TaxTypeCodeType.Item01, 16, 2000))  
+                        .AddLine(l => l.Item("Item Description 2", 1, 100).AddTax(Facturae32.TaxTypeCodeType.Item01, 16, 100));  
                     });
 
             var fe32Text = fe32.ToString();
