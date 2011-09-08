@@ -19,7 +19,12 @@
 
 using System.IO;
 using System.Xml;
+using System.Xml.Xsl;
 using System.Xml.Serialization;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.text.html;
+using iTextSharp.text.html.simpleparser;
 
 namespace nFacturae
 {
@@ -69,6 +74,71 @@ namespace nFacturae
             var fs = new StreamReader(xmlPath);
             var xmlReader = XmlReader.Create(fs);
             return serializer.Deserialize(xmlReader) as T;
+        }
+
+        private byte[] _Transform(string xsl, string logoPath)
+        {
+            XslCompiledTransform xslt = new XslCompiledTransform();
+            XmlReaderSettings settings = new XmlReaderSettings();
+            settings.DtdProcessing = DtdProcessing.Ignore;
+
+            XsltArgumentList xslArgs = new XsltArgumentList();
+            if (!string.IsNullOrEmpty(logoPath))
+                xslArgs.AddParam("pathLogo", string.Empty, logoPath);
+
+            var invoiceBytes = System.Text.UTF8Encoding.UTF8.GetBytes(this.ToString());
+            var xslBytes = System.Text.UTF8Encoding.UTF8.GetBytes(xsl);
+
+            using (MemoryStream memXsl = new MemoryStream(xslBytes))
+            {
+                xslt.Load(XmlReader.Create(memXsl, settings));
+            }
+
+            using (MemoryStream memOut = new MemoryStream())
+            {
+                using (MemoryStream memXml = new MemoryStream(invoiceBytes))
+                {
+                    xslt.Transform(XmlReader.Create(memXml, settings), xslArgs, XmlWriter.Create(memOut, xslt.OutputSettings));
+                }
+                return memOut.ToArray();
+            }
+        }
+
+        public string ToUNEDOC(string logoPath)
+        {
+            return System.Text.UTF8Encoding.UTF8.GetString(_Transform(Properties.Resource.es_UNEDOCS, logoPath));
+        }
+
+        public string ToUNEDOC(string xsl, string logoPath)
+        {
+            var xslToUse = xsl;
+            if (string.IsNullOrEmpty(xslToUse))
+                xslToUse = Properties.Resource.es_UNEDOCS;
+
+            return System.Text.UTF8Encoding.UTF8.GetString(_Transform(xsl, logoPath));
+        }
+
+        private MemoryStream _ToPdf(string xsl, string logoPath, string outputPath)
+        {
+            var html = ToUNEDOC(xsl, logoPath);
+
+            var document = new Document(PageSize.A4, 80, 50, 30, 65);
+            var stream = new MemoryStream();
+            var PDFWriter = PdfWriter.GetInstance(document, stream);
+            document.Open();
+
+            var objects = HTMLWorker.ParseToList(new StreamReader(new MemoryStream(System.Text.UTF8Encoding.UTF8.GetBytes(html))), new StyleSheet());
+			for (int k = 1; k < objects.Count; ++k)
+				document.Add((IElement) objects[k]);
+
+            document.Close();
+
+            return stream;
+        }
+
+        public MemoryStream ToPdf(string logoPath)
+        {
+            return _ToPdf(Properties.Resource.es_UNEDOCS, logoPath, "");
         }
     }
 }

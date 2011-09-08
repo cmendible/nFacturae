@@ -56,6 +56,19 @@ namespace nFacturae
                     });
 
             var fe32Text = fe32.ToString();
+
+            var unedoc = fe32.ToUNEDOC("http://www.hexasystems.com/wp-content/themes/hexa/images/logo.png");
+            var ms =new System.IO.MemoryStream(System.Text.UTF8Encoding.UTF8.GetBytes(unedoc));
+            var fs = System.IO.File.OpenWrite("invoice.html");
+            var data = ms.ToArray();
+            fs.Write(data, 0, data.Length);
+            fs.Close();
+
+            ms = fe32.ToPdf("http://www.hexasystems.com/wp-content/themes/hexa/images/logo.png");
+            fs = System.IO.File.OpenWrite("invoice.pdf");
+            data = ms.ToArray();
+            fs.Write(data, 0, data.Length);
+            fs.Close();
         }
     }
 }

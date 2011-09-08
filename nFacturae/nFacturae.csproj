@@ -84,6 +84,9 @@
     <Reference Include="IKVM.Runtime">
       <HintPath>..\libs\ikvm\IKVM.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\libs\itextsharp\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="jss-4.2.5">
       <HintPath>..\libs\AEAT\deps\jss-4.2.5.dll</HintPath>
     </Reference>
@@ -170,7 +173,11 @@
     <EmbeddedResource Include="Properties\Resource.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Xslts\es-UNEDOCS.xsl" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
