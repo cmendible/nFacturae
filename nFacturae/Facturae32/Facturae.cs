@@ -17,9 +17,9 @@ namespace nFacturae.Facturae32
 
             batch.InvoicesCount = 0;
             batch.BatchIdentifier = string.Empty;
-            batch.TotalInvoicesAmount = new AmountType() { TotalAmount = new DoubleTwoDecimalType(0.00) };
-            batch.TotalOutstandingAmount = new AmountType() { TotalAmount = new DoubleTwoDecimalType(0.00) };
-            batch.TotalExecutableAmount = new AmountType() { TotalAmount = new DoubleTwoDecimalType(0.00) };
+            batch.TotalInvoicesAmount = new AmountType() { TotalAmount = new DoubleTwoDecimalType() };
+            batch.TotalOutstandingAmount = new AmountType() { TotalAmount = new DoubleTwoDecimalType() };
+            batch.TotalExecutableAmount = new AmountType() { TotalAmount = new DoubleTwoDecimalType() };
             batch.InvoiceCurrencyCode = CurrencyCodeType.EUR;
 
             this.FileHeader = fileHeader;
@@ -87,7 +87,7 @@ namespace nFacturae.Facturae32
             legal.CorporateName = corporateName;
             legal.Item = _CreateAddress(residenceTypeCode, address, postalCode, province, town, country);
 
-            var party = _CreateParty(PersonTypeCodeType.F, residenceTypeCode, taxIdentificationNumber, legal);
+            var party = _CreateParty(PersonTypeCodeType.J, residenceTypeCode, taxIdentificationNumber, legal);
 
             if (seller)
                 this.Parties.SellerParty = party;
@@ -114,9 +114,9 @@ namespace nFacturae.Facturae32
 
             this.FileHeader.Batch.InvoicesCount += 1;
 
-            this.FileHeader.Batch.TotalInvoicesAmount.TotalAmount.Value += invoiceType.InvoiceTotals.InvoiceTotal;
-            this.FileHeader.Batch.TotalOutstandingAmount.TotalAmount.Value += invoiceType.InvoiceTotals.InvoiceTotal;
-            this.FileHeader.Batch.TotalExecutableAmount.TotalAmount.Value += invoiceType.InvoiceTotals.InvoiceTotal;
+            this.FileHeader.Batch.TotalInvoicesAmount.TotalAmount.Value += invoiceType.InvoiceTotals.InvoiceTotal.Value;
+            this.FileHeader.Batch.TotalOutstandingAmount.TotalAmount.Value += invoiceType.InvoiceTotals.TotalOutstandingAmount.Value;
+            this.FileHeader.Batch.TotalExecutableAmount.TotalAmount.Value += invoiceType.InvoiceTotals.TotalExecutableAmount.Value;
 
             return this;
         }

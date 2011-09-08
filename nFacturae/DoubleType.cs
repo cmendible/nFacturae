@@ -20,7 +20,7 @@ namespace nFacturae
             this.Value = value;
         }
 
-        public abstract int DecimalPlaces { get; }
+        protected abstract int DecimalPlaces { get; }
 
         public override string ToString()
         {
@@ -65,7 +65,7 @@ namespace nFacturae
         {
         }
 
-        public override int DecimalPlaces
+        protected override int DecimalPlaces
         {
             get { return 2; }
         }
@@ -84,7 +84,7 @@ namespace nFacturae
         {
         }
 
-        public override int DecimalPlaces
+        protected override int DecimalPlaces
         {
             get { return 4; }
         }
@@ -103,7 +103,7 @@ namespace nFacturae
         {
         }
 
-        public override int DecimalPlaces
+        protected override int DecimalPlaces
         {
             get { return 6; }
         }

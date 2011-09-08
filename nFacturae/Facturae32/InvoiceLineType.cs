@@ -11,9 +11,9 @@ namespace nFacturae.Facturae32
         {
             this.ItemDescription = itemDescription;
             this.Quantity = quantity;
-            this.UnitPriceWithoutTax = unitPriceWithoutTax;
-            this.TotalCost = quantity * unitPriceWithoutTax;
-            this.GrossAmount = this.TotalCost;
+            this.UnitPriceWithoutTax = new DoubleSixDecimalType(unitPriceWithoutTax);
+            this.TotalCost =  new DoubleSixDecimalType(quantity * unitPriceWithoutTax);
+            this.GrossAmount = new DoubleSixDecimalType(this.TotalCost.Value); // TotalCost - DiscountAmount + ChargeAmount 
 
             return this;
         }
@@ -25,12 +25,11 @@ namespace nFacturae.Facturae32
 
             var tax = new InvoiceLineTypeTax();
             tax.TaxTypeCode = taxTypeCode;
-            tax.TaxRate = taxRate;
+            tax.TaxRate = new DoubleTwoDecimalType(taxRate);
             tax.TaxableBase = new AmountType() { TotalAmount = new DoubleTwoDecimalType(taxableBase) };
+            tax.TaxAmount = new AmountType() { TotalAmount = new DoubleTwoDecimalType(taxableBase * taxRate / 100) };
 
-            var taxes = new List<InvoiceLineTypeTax>(this.TaxesOutputs);
-            taxes.Add(tax);
-            this.TaxesOutputs = taxes.ToArray();
+            this.TaxesOutputs = this.TaxesOutputs.Concat(new InvoiceLineTypeTax[] { tax }).ToArray();
 
             return this;
         }

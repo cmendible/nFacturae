@@ -1752,16 +1752,16 @@ namespace nFacturae.Facturae32
         private UnitOfMeasureType unitOfMeasureField;
         
         private bool unitOfMeasureFieldSpecified;
-        
-        private double unitPriceWithoutTaxField;
-        
-        private double totalCostField;
+
+        private DoubleSixDecimalType unitPriceWithoutTaxField;
+
+        private DoubleSixDecimalType totalCostField;
         
         private DiscountType[] discountsAndRebatesField;
         
         private ChargeType[] chargesField;
-        
-        private double grossAmountField;
+
+        private DoubleSixDecimalType grossAmountField;
         
         private TaxType[] taxesWithheldField;
         
@@ -2026,7 +2026,8 @@ namespace nFacturae.Facturae32
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public double UnitPriceWithoutTax {
+        public DoubleSixDecimalType UnitPriceWithoutTax
+        {
             get {
                 return this.unitPriceWithoutTaxField;
             }
@@ -2037,7 +2038,8 @@ namespace nFacturae.Facturae32
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public double TotalCost {
+        public DoubleSixDecimalType TotalCost
+        {
             get {
                 return this.totalCostField;
             }
@@ -2072,7 +2074,8 @@ namespace nFacturae.Facturae32
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public double GrossAmount {
+        public DoubleSixDecimalType GrossAmount
+        {
             get {
                 return this.grossAmountField;
             }
@@ -2339,12 +2342,12 @@ namespace nFacturae.Facturae32
     public partial class DiscountType {
         
         private string discountReasonField;
-        
-        private double discountRateField;
+
+        private DoubleFourDecimalType discountRateField;
         
         private bool discountRateFieldSpecified;
-        
-        private double discountAmountField;
+
+        private DoubleSixDecimalType discountAmountField;
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -2359,7 +2362,8 @@ namespace nFacturae.Facturae32
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public double DiscountRate {
+        public DoubleFourDecimalType DiscountRate
+        {
             get {
                 return this.discountRateField;
             }
@@ -2381,7 +2385,8 @@ namespace nFacturae.Facturae32
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public double DiscountAmount {
+        public DoubleSixDecimalType DiscountAmount
+        {
             get {
                 return this.discountAmountField;
             }
@@ -2404,8 +2409,8 @@ namespace nFacturae.Facturae32
         private double chargeRateField;
         
         private bool chargeRateFieldSpecified;
-        
-        private double chargeAmountField;
+
+        private DoubleSixDecimalType chargeAmountField;
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -2442,7 +2447,8 @@ namespace nFacturae.Facturae32
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public double ChargeAmount {
+        public DoubleSixDecimalType ChargeAmount
+        {
             get {
                 return this.chargeAmountField;
             }
@@ -2461,8 +2467,8 @@ namespace nFacturae.Facturae32
     public partial class TaxType {
         
         private TaxTypeCodeType taxTypeCodeField;
-        
-        private double taxRateField;
+
+        private DoubleTwoDecimalType taxRateField;
         
         private AmountType taxableBaseField;
         
@@ -2481,7 +2487,8 @@ namespace nFacturae.Facturae32
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public double TaxRate {
+        public DoubleTwoDecimalType TaxRate
+        {
             get {
                 return this.taxRateField;
             }
@@ -2663,8 +2670,8 @@ namespace nFacturae.Facturae32
     public partial class TaxOutputType {
         
         private TaxTypeCodeType taxTypeCodeField;
-        
-        private double taxRateField;
+
+        private DoubleTwoDecimalType taxRateField;
         
         private AmountType taxableBaseField;
         
@@ -2693,7 +2700,7 @@ namespace nFacturae.Facturae32
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public double TaxRate {
+        public DoubleTwoDecimalType TaxRate {
             get {
                 return this.taxRateField;
             }
@@ -2824,12 +2831,12 @@ namespace nFacturae.Facturae32
     public partial class AmountsWithheldType {
         
         private string withholdingReasonField;
-        
-        private double withholdingRateField;
+
+        private DoubleFourDecimalType withholdingRateField;
         
         private bool withholdingRateFieldSpecified;
-        
-        private double withholdingAmountField;
+
+        private DoubleTwoDecimalType withholdingAmountField;
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -2844,7 +2851,8 @@ namespace nFacturae.Facturae32
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public double WithholdingRate {
+        public DoubleFourDecimalType WithholdingRate
+        {
             get {
                 return this.withholdingRateField;
             }
@@ -2866,7 +2874,8 @@ namespace nFacturae.Facturae32
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public double WithholdingAmount {
+        public DoubleTwoDecimalType WithholdingAmount
+        {
             get {
                 return this.withholdingAmountField;
             }
@@ -3079,56 +3088,57 @@ namespace nFacturae.Facturae32
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.facturae.es/Facturae/2009/v3.2/Facturae")]
     public partial class InvoiceTotalsType {
-        
-        private double totalGrossAmountField;
+
+        private DoubleTwoDecimalType totalGrossAmountField;
         
         private DiscountType[] generalDiscountsField;
         
         private ChargeType[] generalSurchargesField;
-        
-        private double totalGeneralDiscountsField;
+
+        private DoubleTwoDecimalType totalGeneralDiscountsField;
         
         private bool totalGeneralDiscountsFieldSpecified;
-        
-        private double totalGeneralSurchargesField;
+
+        private DoubleTwoDecimalType totalGeneralSurchargesField;
         
         private bool totalGeneralSurchargesFieldSpecified;
-        
-        private double totalGrossAmountBeforeTaxesField;
-        
-        private double totalTaxOutputsField;
-        
-        private double totalTaxesWithheldField;
-        
-        private double invoiceTotalField;
+
+        private DoubleTwoDecimalType totalGrossAmountBeforeTaxesField;
+
+        private DoubleTwoDecimalType totalTaxOutputsField;
+
+        private DoubleTwoDecimalType totalTaxesWithheldField;
+
+        private DoubleTwoDecimalType invoiceTotalField;
         
         private SubsidyType[] subsidiesField;
         
         private PaymentOnAccountType[] paymentsOnAccountField;
         
         private ReimbursableExpensesType[] reimbursableExpensesField;
-        
-        private double totalFinancialExpensesField;
+
+        private DoubleTwoDecimalType totalFinancialExpensesField;
         
         private bool totalFinancialExpensesFieldSpecified;
-        
-        private double totalOutstandingAmountField;
-        
-        private double totalPaymentsOnAccountField;
+
+        private DoubleTwoDecimalType totalOutstandingAmountField;
+
+        private DoubleTwoDecimalType totalPaymentsOnAccountField;
         
         private bool totalPaymentsOnAccountFieldSpecified;
         
         private AmountsWithheldType amountsWithheldField;
-        
-        private double totalExecutableAmountField;
-        
-        private double totalReimbursableExpensesField;
-        
+
+        private DoubleTwoDecimalType totalExecutableAmountField;
+
+        private DoubleTwoDecimalType totalReimbursableExpensesField;
+
         private bool totalReimbursableExpensesFieldSpecified;
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public double TotalGrossAmount {
+        public DoubleTwoDecimalType TotalGrossAmount
+        {
             get {
                 return this.totalGrossAmountField;
             }
@@ -3163,7 +3173,8 @@ namespace nFacturae.Facturae32
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public double TotalGeneralDiscounts {
+        public DoubleTwoDecimalType TotalGeneralDiscounts
+        {
             get {
                 return this.totalGeneralDiscountsField;
             }
@@ -3185,7 +3196,8 @@ namespace nFacturae.Facturae32
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public double TotalGeneralSurcharges {
+        public DoubleTwoDecimalType TotalGeneralSurcharges
+        {
             get {
                 return this.totalGeneralSurchargesField;
             }
@@ -3207,7 +3219,8 @@ namespace nFacturae.Facturae32
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public double TotalGrossAmountBeforeTaxes {
+        public DoubleTwoDecimalType TotalGrossAmountBeforeTaxes
+        {
             get {
                 return this.totalGrossAmountBeforeTaxesField;
             }
@@ -3218,7 +3231,8 @@ namespace nFacturae.Facturae32
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public double TotalTaxOutputs {
+        public DoubleTwoDecimalType TotalTaxOutputs
+        {
             get {
                 return this.totalTaxOutputsField;
             }
@@ -3229,7 +3243,8 @@ namespace nFacturae.Facturae32
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public double TotalTaxesWithheld {
+        public DoubleTwoDecimalType TotalTaxesWithheld
+        {
             get {
                 return this.totalTaxesWithheldField;
             }
@@ -3240,7 +3255,8 @@ namespace nFacturae.Facturae32
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public double InvoiceTotal {
+        public DoubleTwoDecimalType InvoiceTotal
+        {
             get {
                 return this.invoiceTotalField;
             }
@@ -3287,7 +3303,8 @@ namespace nFacturae.Facturae32
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public double TotalFinancialExpenses {
+        public DoubleTwoDecimalType TotalFinancialExpenses
+        {
             get {
                 return this.totalFinancialExpensesField;
             }
@@ -3309,7 +3326,8 @@ namespace nFacturae.Facturae32
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public double TotalOutstandingAmount {
+        public DoubleTwoDecimalType TotalOutstandingAmount
+        {
             get {
                 return this.totalOutstandingAmountField;
             }
@@ -3320,7 +3338,8 @@ namespace nFacturae.Facturae32
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public double TotalPaymentsOnAccount {
+        public DoubleTwoDecimalType TotalPaymentsOnAccount
+        {
             get {
                 return this.totalPaymentsOnAccountField;
             }
@@ -3353,7 +3372,8 @@ namespace nFacturae.Facturae32
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public double TotalExecutableAmount {
+        public DoubleTwoDecimalType TotalExecutableAmount
+        {
             get {
                 return this.totalExecutableAmountField;
             }
@@ -3364,7 +3384,8 @@ namespace nFacturae.Facturae32
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public double TotalReimbursableExpenses {
+        public DoubleTwoDecimalType TotalReimbursableExpenses
+        {
             get {
                 return this.totalReimbursableExpensesField;
             }
@@ -4803,8 +4824,8 @@ namespace nFacturae.Facturae32
     public partial class InstallmentType {
         
         private System.DateTime installmentDueDateField;
-        
-        private double installmentAmountField;
+
+        private DoubleTwoDecimalType installmentAmountField;
         
         private PaymentMeansType paymentMeansField;
         
@@ -4833,7 +4854,8 @@ namespace nFacturae.Facturae32
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public double InstallmentAmount {
+        public DoubleTwoDecimalType InstallmentAmount
+        {
             get {
                 return this.installmentAmountField;
             }
