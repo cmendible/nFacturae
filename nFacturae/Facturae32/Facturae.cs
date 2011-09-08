@@ -24,7 +24,7 @@ namespace nFacturae.Facturae32
 {
     public partial class Facturae : BaseFacturae<Facturae>
     {
-        public Facturae()
+        public Facturae() : base()
         {
             var fileHeader  = new FileHeaderType();
             fileHeader.SchemaVersion = SchemaVersionType.Item32;

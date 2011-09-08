@@ -17,19 +17,35 @@
 
 #endregion
 
+using System.Text;
 using System.IO;
 using System.Xml;
 using System.Xml.Xsl;
+using System.Xml.Schema;
 using System.Xml.Serialization;
+using System.Collections.Generic;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.text.html;
 using iTextSharp.text.html.simpleparser;
+using nFacturae.Validation;
 
 namespace nFacturae
 {
     public abstract class BaseFacturae<T> where T : class
     {
+        private static XmlSchemaSet _schemaSet;
+
+        public BaseFacturae()
+        {
+            var _schemas = new Dictionary<string, byte[]>();
+            _schemas.Add("http://www.facturae.es/Facturae/2007/v3.1/Facturae", System.Text.UTF8Encoding.UTF8.GetBytes(Properties.Resource.Facturaev3_1));
+            _schemas.Add("http://www.facturae.es/Facturae/2009/v3.2/Facturae", System.Text.UTF8Encoding.UTF8.GetBytes(Properties.Resource.Facturaev3_2));
+            _schemas.Add("xmldsig-core-schema.xsd", System.Text.UTF8Encoding.UTF8.GetBytes(Properties.Resource.xmldsig_core_schema));
+
+            _schemaSet = XmlValidator.CreateXmlSchemaSet(_Namespace(), _schemas);
+        }
+
         public XmlReader ToXmlReader()
         {
             var ms = new MemoryStream();
@@ -139,6 +155,16 @@ namespace nFacturae
         public MemoryStream ToPdf(string logoPath)
         {
             return _ToPdf(Properties.Resource.es_UNEDOCS, logoPath, "");
+        }
+
+        public void ValidateSchema()
+        {
+            XmlValidator.Validate(UTF8Encoding.UTF8.GetBytes(this.ToString()), _schemaSet);
+        }
+
+        public void Validate()
+        {
+            ValidateSchema();
         }
     }
 }

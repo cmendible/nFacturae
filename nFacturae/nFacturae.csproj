@@ -157,6 +157,8 @@
     <Compile Include="Schemas\Facturaev31_Schema.cs" />
     <Compile Include="Schemas\Facturaev3_2_Schema.cs" />
     <Compile Include="Signer.cs" />
+    <Compile Include="Validation\SchemaResolver.cs" />
+    <Compile Include="Validation\XmlValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Schemas\Facturaev31.xsd">

@@ -2681,7 +2681,7 @@ namespace nFacturae.Facturae32
         
         private AmountType specialTaxAmountField;
         
-        private double equivalenceSurchargeField;
+        private DoubleTwoDecimalType equivalenceSurchargeField;
         
         private bool equivalenceSurchargeFieldSpecified;
         
@@ -2755,7 +2755,7 @@ namespace nFacturae.Facturae32
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public double EquivalenceSurcharge {
+        public DoubleTwoDecimalType EquivalenceSurcharge {
             get {
                 return this.equivalenceSurchargeField;
             }
