@@ -17,17 +17,16 @@
 
 #endregion
 
-using System.Text;
+using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using System.Xml;
-using System.Xml.Xsl;
 using System.Xml.Schema;
 using System.Xml.Serialization;
-using System.Collections.Generic;
+using System.Xml.Xsl;
 using iTextSharp.text;
-using iTextSharp.text.pdf;
-using iTextSharp.text.html;
 using iTextSharp.text.html.simpleparser;
+using iTextSharp.text.pdf;
 using nFacturae.Validation;
 
 namespace nFacturae

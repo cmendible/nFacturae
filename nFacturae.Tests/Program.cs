@@ -18,11 +18,6 @@
 #endregion
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Reflection;
-using System.Threading;
 
 namespace nFacturae
 {
@@ -39,8 +34,10 @@ namespace nFacturae
             //signer.Sign(@"..\..\Samples\sample_32.xml", "signed32.xml", "certificate.pfx", "password");
 
             //var inv = nFacturae.Facturae31.Facturae.FromFile(@"..\..\Samples\sample_31.xml");
+            //inv.Validate();
 
-            //var inv2 = nFacturae.Facturae32.Facturae.FromFile(@"..\..\Samples\sample_32.xml");
+            var inv2 = nFacturae.Facturae32.Facturae.FromFile(@"..\..\Samples\sample_32.xml");
+            inv2.Validate();
 
             var fe32 = new Facturae32.Facturae()
                 .AddLegalParty(true, Facturae32.PersonTypeCodeType.J, Facturae32.ResidenceTypeCodeType.E, "79065414H",
@@ -55,16 +52,20 @@ namespace nFacturae
                         .AddLine(l => l.Item("Item Description 2", 1, 100).AddTax(Facturae32.TaxTypeCodeType.Item01, 16, 100));  
                     });
 
+            fe32.Validate();
+
             var fe32Text = fe32.ToString();
 
-            var unedoc = fe32.ToUNEDOC("http://www.hexasystems.com/wp-content/themes/hexa/images/logo.png");
+            var logoPath = "https://a248.e.akamai.net/assets.github.com/images/modules/header/logov6-hover.png";
+
+            var unedoc = fe32.ToUNEDOC(logoPath);
             var ms =new System.IO.MemoryStream(System.Text.UTF8Encoding.UTF8.GetBytes(unedoc));
             var fs = System.IO.File.OpenWrite("invoice.html");
             var data = ms.ToArray();
             fs.Write(data, 0, data.Length);
             fs.Close();
 
-            ms = fe32.ToPdf("http://www.hexasystems.com/wp-content/themes/hexa/images/logo.png");
+            ms = fe32.ToPdf(logoPath);
             fs = System.IO.File.OpenWrite("invoice.pdf");
             data = ms.ToArray();
             fs.Write(data, 0, data.Length);
