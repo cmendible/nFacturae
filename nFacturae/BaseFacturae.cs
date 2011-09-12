@@ -91,6 +91,16 @@ namespace nFacturae
             return serializer.Deserialize(xmlReader) as T;
         }
 
+        public static T FromXml(string xml)
+        {
+            XmlRootAttribute xr = new XmlRootAttribute() { ElementName = "Facturae", Namespace = _Namespace() };
+            var serializer = new XmlSerializer(typeof(T), xr);
+
+            var fs = new StreamReader(new MemoryStream(System.Text.UTF8Encoding.UTF8.GetBytes(xml)));
+            var xmlReader = XmlReader.Create(fs);
+            return serializer.Deserialize(xmlReader) as T;
+        }
+
         private byte[] _Transform(string xsl, string logoPath)
         {
             XslCompiledTransform xslt = new XslCompiledTransform();
@@ -119,7 +129,7 @@ namespace nFacturae
             }
         }
 
-        public string ToUNEDOC(string logoPath)
+        public string ToUNeDoc(string logoPath)
         {
             return System.Text.UTF8Encoding.UTF8.GetString(_Transform(Properties.Resource.facturae_unedocs, logoPath));
         }
