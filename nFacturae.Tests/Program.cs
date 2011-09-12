@@ -46,7 +46,7 @@ namespace nFacturae
                     "Mendible", "Carlos Address", "28019", "Madrid", "Madrid", Facturae32.CountryType.ESP)
                 .AddInvoice((i) => 
                     {
-                        i.HeatherAndIssueData("231418", Facturae32.InvoiceDocumentTypeType.FA,
+                        i.HeatherAndIssueData("231418", Facturae32.InvoiceDocumentTypeType.FC,
                             Facturae32.InvoiceClassType.OO, DateTime.Now, Facturae32.CurrencyCodeType.EUR, Facturae32.LanguageCodeType.es)
                         .AddLine(l => l.Item("Item Description", 1, 2000).AddTax(Facturae32.TaxTypeCodeType.Item01, 16, 2000))  
                         .AddLine(l => l.Item("Item Description 2", 1, 100).AddTax(Facturae32.TaxTypeCodeType.Item01, 16, 100));  

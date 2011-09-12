@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace nFacturae.Properties
-{
-
-
+namespace nFacturae.Properties {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -61,7 +61,7 @@ namespace nFacturae.Properties
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; 
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
         ///
         ///&lt;!DOCTYPE xsl:stylesheet [
         ///  &lt;!ENTITY nbsp &quot;&amp;#160;&quot;&gt;
@@ -70,25 +70,25 @@ namespace nFacturae.Properties
         ///&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:java=&quot;http://xml.apache.org/xslt/java&quot;
         ///  extension-element-prefixes=&quot;java&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
         ///  &lt;xsl:decimal-format grouping-separator=&quot;.&quot; decimal-separator=&quot;,&quot;/&gt;
-        ///  &lt;!-- Importing resuable types file --&gt;
-        ///  &lt;!--&lt;xsl:import href=&quot;UNeDocsRT_HTM.xsl&quot;/&gt;--&gt;
+        ///  &lt;xsl:output method=&quot;html&quot; indent=&quot;yes&quot;/&gt;
         ///
-        ///  &lt;!-- Importing the resouce file filelocation.xsl for a file locations --&gt;
-        ///  &lt;!- [rest of string was truncated]&quot;;.
+        ///  &lt;!-- Declaración del atributo prn-attrs --&gt;
+        ///  &lt;xsl:attribute-set name=&quot;prn-attrs&quot;&gt;
+        ///    &lt;xsl:attribute name=&quot;style&quot;&gt;font-family [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string es_UNEDOCS {
+        internal static string facturae_unedocs {
             get {
-                return ResourceManager.GetString("es_UNEDOCS", resourceCulture);
+                return ResourceManager.GetString("facturae_unedocs", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
         ///&lt;xs:schema xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns=&quot;http://www.facturae.es/Facturae/2007/v3.1/Facturae&quot; targetNamespace=&quot;http://www.facturae.es/Facturae/2007/v3.1/Facturae&quot; version=&quot;3.1&quot;&gt;
-        ///	&lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;xmldsig-core-schema.xsd&quot;/&gt;
+        ///	&lt;xs:import namespace=&quot;http://www.w3.org/2000/09/xmldsig#&quot; schemaLocation=&quot;http://www.w3.org/TR/xmldsig-core/xmldsig-core-schema.xsd&quot;/&gt;
         ///	&lt;xs:element name=&quot;Facturae&quot;&gt;
         ///		&lt;xs:annotation&gt;
-        ///			&lt;xs:documentation xml:lang=&quot;en&quot;&gt; Element ORIGIN of Facturae Invoices Fi [rest of string was truncated]&quot;;.
+        ///			&lt;xs:documentation xml:lang=&quot;en&quot;&gt; Elem [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Facturaev3_1 {
             get {

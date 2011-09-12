@@ -99,7 +99,7 @@ namespace nFacturae
 
             XsltArgumentList xslArgs = new XsltArgumentList();
             if (!string.IsNullOrEmpty(logoPath))
-                xslArgs.AddParam("pathLogo", string.Empty, logoPath);
+                xslArgs.AddParam("logoPath", string.Empty, logoPath);
 
             var invoiceBytes = System.Text.UTF8Encoding.UTF8.GetBytes(this.ToString());
             var xslBytes = System.Text.UTF8Encoding.UTF8.GetBytes(xsl);
@@ -121,21 +121,21 @@ namespace nFacturae
 
         public string ToUNEDOC(string logoPath)
         {
-            return System.Text.UTF8Encoding.UTF8.GetString(_Transform(Properties.Resource.es_UNEDOCS, logoPath));
+            return System.Text.UTF8Encoding.UTF8.GetString(_Transform(Properties.Resource.facturae_unedocs, logoPath));
         }
 
-        public string ToUNEDOC(string xsl, string logoPath)
+        public string Transform(string xsl, string logoPath)
         {
             var xslToUse = xsl;
             if (string.IsNullOrEmpty(xslToUse))
-                xslToUse = Properties.Resource.es_UNEDOCS;
+                xslToUse = Properties.Resource.facturae_unedocs;
 
             return System.Text.UTF8Encoding.UTF8.GetString(_Transform(xsl, logoPath));
         }
 
         private MemoryStream _ToPdf(string xsl, string logoPath, string outputPath)
         {
-            var html = ToUNEDOC(xsl, logoPath);
+            var html = Transform(xsl, logoPath);
 
             var document = new Document(PageSize.A4, 80, 50, 30, 65);
             var stream = new MemoryStream();
@@ -153,7 +153,7 @@ namespace nFacturae
 
         public MemoryStream ToPdf(string logoPath)
         {
-            return _ToPdf(Properties.Resource.es_UNEDOCS, logoPath, "");
+            return _ToPdf(Properties.Resource.facturae_unedocs, logoPath, "");
         }
 
         public void ValidateSchema()
