@@ -18,11 +18,11 @@
 #endregion
 
 using System;
-using MbUnit.Framework;
-using Gallio.Framework;
 using Gallio.Common.Markup;
-using nFacturae.Tests.Properties;
+using Gallio.Framework;
+using MbUnit.Framework;
 using nFacturae.Facturae32;
+using nFacturae.Tests.Properties;
 
 namespace nFactura.Tests
 {

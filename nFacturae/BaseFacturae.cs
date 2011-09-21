@@ -17,6 +17,7 @@
 
 #endregion
 
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -31,6 +32,7 @@ using nFacturae.Validation;
 
 namespace nFacturae
 {
+    [Serializable]
     public abstract class BaseFacturae<T> where T : class
     {
         private static XmlSchemaSet _schemaSet;
