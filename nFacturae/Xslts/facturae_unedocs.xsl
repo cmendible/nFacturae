@@ -58,7 +58,7 @@
 
         <div class="Section1">
 
-          <table border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse; border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0mm 5.4pt 0mm 5.4pt">
+          <table border="1" cellspacing="0" cellpadding="2" style="border-collapse:collapse; border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0mm 5.4pt 0mm 5.4pt">
 
             <tr height="13" style="height:9.95pt">
 
@@ -906,7 +906,7 @@
             </tr>
 
             <xsl:variable name="LineItemCnt" select="count(//*/InvoiceLine)"/>
-            <xsl:variable name="Row_Hgt">
+            <!--<xsl:variable name="Row_Hgt">
               <xsl:if test="$LineItemCnt = 1">200</xsl:if>
               <xsl:if test="$LineItemCnt = 2">13</xsl:if>
               <xsl:if test="$LineItemCnt = 3">82</xsl:if>
@@ -914,14 +914,15 @@
               <xsl:if test="$LineItemCnt = 4">44</xsl:if>
               <xsl:if test="$LineItemCnt = 5">86</xsl:if>
               <xsl:if test="$LineItemCnt &gt; 6">86</xsl:if>
-            </xsl:variable>
-
+            </xsl:variable>-->
 
             <xsl:for-each select="//*/InvoiceLine">
 
               <tr>
 
-                <td width="88" height="{$Row_Hgt}" valign="top" style="width:66.15pt;border-top:none;border-left:solid windowtext 1.5pt;border-bottom:none;border-right:solid windowtext 1.5pt;padding:0mm 1.4pt 0mm 1.4pt;">
+                <!--height="{$Row_Hgt}"-->
+
+                <td width="88" valign="top" style="width:66.15pt;border-top:none;border-left:solid windowtext 1.5pt;border-bottom:none;border-right:solid windowtext 1.5pt;padding:0mm 1.4pt 0mm 1.4pt;">
 
                   <p class="MsoSmall" align="right">
                     <span style="font-size:0.8em;">
@@ -932,7 +933,7 @@
 
                 </td>
 
-                <td width="261" height="{$Row_Hgt}" valign="top" style="width:166.05pt;border:none;border-right:solid windowtext 1.5pt;mso-border-left-alt:solid windowtext 1.5pt;padding:0mm 1.4pt 0mm 1.4pt;">
+                <td width="261" valign="top" style="width:166.05pt;border:none;border-right:solid windowtext 1.5pt;mso-border-left-alt:solid windowtext 1.5pt;padding:0mm 1.4pt 0mm 1.4pt;">
 
                   <p class="MsoSmall">
                     <span style="font-size:0.8em;">
@@ -943,7 +944,7 @@
 
                 </td>
 
-                <td width="50" height="{$Row_Hgt}" valign="top" style="width:66.2pt;border:none;border-right:solid windowtext 1.5pt;mso-border-left-alt:solid windowtext 1.5pt;padding:0mm 1.4pt 0mm 1.4pt;">
+                <td width="50" valign="top" style="width:66.2pt;border:none;border-right:solid windowtext 1.5pt;mso-border-left-alt:solid windowtext 1.5pt;padding:0mm 1.4pt 0mm 1.4pt;">
 
                   <p class="MsoSmall" align="right">
                     <span style="font-size:0.8em;">
@@ -982,7 +983,7 @@
 
                 </td>
 
-                <td width="88" height="{$Row_Hgt}" valign="top" style="width:66.2pt;border:none;border-right:solid windowtext 1.5pt;mso-border-left-alt:solid windowtext 1.5pt;padding:0mm 1.4pt 0mm 1.4pt;">
+                <td width="88" valign="top" style="width:66.2pt;border:none;border-right:solid windowtext 1.5pt;mso-border-left-alt:solid windowtext 1.5pt;padding:0mm 1.4pt 0mm 1.4pt;">
                   <p class="MsoSmall" align="right">
                     <span style="font-size:0.8em;">
                       <!-- PRECIO UNITARIO -->
@@ -994,7 +995,7 @@
                   </p>
                 </td>
 
-                <td width="88" height="{$Row_Hgt}" valign="top" style="width:66.2pt;border:none;border-right:solid windowtext 1.5pt;mso-border-left-alt:solid windowtext 1.5pt;padding:0mm 1.4pt 0mm 1.4pt;">
+                <td width="88" valign="top" style="width:66.2pt;border:none;border-right:solid windowtext 1.5pt;mso-border-left-alt:solid windowtext 1.5pt;padding:0mm 1.4pt 0mm 1.4pt;">
                   <p class="MsoSmall" align="right">
                     <span style="font-size:0.8em;">
                       <xsl:variable name="discountRate">
@@ -1006,7 +1007,7 @@
                   </p>
                 </td>
 
-                <td width="88" height="{$Row_Hgt}" valign="top" style="width:66.2pt;border:none;border-right:solid windowtext 1.5pt;mso-border-left-alt:solid windowtext 1.5pt;padding:0mm 1.4pt 0mm 1.4pt;">
+                <td width="88" valign="top" style="width:66.2pt;border:none;border-right:solid windowtext 1.5pt;mso-border-left-alt:solid windowtext 1.5pt;padding:0mm 1.4pt 0mm 1.4pt;">
                   <p class="MsoSmall" align="right">
                     <span style="font-size:0.8em;">
                       <!-- TOTAL SIN IVA -->
@@ -1028,7 +1029,7 @@
                   </p>
                 </td>
 
-                <td width="88" height="{$Row_Hgt}" valign="top" style="width:66.2pt;border:none;border-right:solid windowtext 1.5pt;mso-border-left-alt:solid windowtext 1.5pt;padding:0mm 1.4pt 0mm 1.4pt;">
+                <td width="88" valign="top" style="width:66.2pt;border:none;border-right:solid windowtext 1.5pt;mso-border-left-alt:solid windowtext 1.5pt;padding:0mm 1.4pt 0mm 1.4pt;">
                   <xsl:for-each select="./TaxesOutputs/Tax">
                     <p class="MsoSmall" align="center">
                       <span style="font-size:0.8em;">
@@ -1050,7 +1051,7 @@
                   </xsl:for-each>
                 </td>
 
-                <td width="88" height="{$Row_Hgt}" valign="top" style="width:66.2pt;border:none;border-right:solid windowtext 1.5pt;mso-border-left-alt:solid windowtext 1.5pt;padding:0mm 1.4pt 0mm 1.4pt;">
+                <td width="88" valign="top" style="width:66.2pt;border:none;border-right:solid windowtext 1.5pt;mso-border-left-alt:solid windowtext 1.5pt;padding:0mm 1.4pt 0mm 1.4pt;">
                   <xsl:for-each select="./TaxesOutputs/Tax">
                     <p class="MsoSmall" align="right">
                       <span style="font-size:0.8em;">
@@ -1064,7 +1065,7 @@
                   </xsl:for-each>
                 </td>
 
-                <td width="88" height="{$Row_Hgt}" valign="top" style="width:66.2pt;border:none;border-right:solid windowtext 1.5pt;mso-border-left-alt:solid windowtext 1.5pt;padding:0mm 1.4pt 0mm 1.4pt;">
+                <td width="88" valign="top" style="width:66.2pt;border:none;border-right:solid windowtext 1.5pt;mso-border-left-alt:solid windowtext 1.5pt;padding:0mm 1.4pt 0mm 1.4pt;">
                   <p class="MsoSmall" align="center">
                     <span style="font-size:0.8em;">
                       <!-- FECHA DE DEVENGO -->
@@ -1073,7 +1074,7 @@
                   </p>
                 </td>
 
-                <td width="88" height="{$Row_Hgt}" valign="top" style="width:66.2pt;border:none;border-right:solid windowtext 1.5pt;mso-border-left-alt:solid windowtext 1.5pt;padding:0mm 1.4pt 0mm 1.4pt;">
+                <td width="88" valign="top" style="width:66.2pt;border:none;border-right:solid windowtext 1.5pt;mso-border-left-alt:solid windowtext 1.5pt;padding:0mm 1.4pt 0mm 1.4pt;">
                   <xsl:for-each select="./TaxesOutputs/Tax">
                     <p class="MsoSmall" align="right">
                       <span style="font-size:0.8em;">
