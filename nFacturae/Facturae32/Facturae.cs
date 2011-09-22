@@ -99,7 +99,7 @@ namespace nFacturae.Facturae32
             return this;
         }
 
-        public Facturae AddLegalParty(bool seller, PersonTypeCodeType personTypeCodeType, ResidenceTypeCodeType residenceTypeCode, string taxIdentificationNumber, string corporateName,
+        public Facturae AddLegalParty(bool seller, ResidenceTypeCodeType residenceTypeCode, string taxIdentificationNumber, string corporateName,
             string address, string postalCode, string province, string town, CountryType country)
         {
             var legal = new LegalEntityType();

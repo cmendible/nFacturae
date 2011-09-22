@@ -49,7 +49,7 @@ namespace nFactura.Tests
         public Facturae Factuare_Create_Simple_Invoice_And_validate()
         {
             var fe32 = new Facturae()
-                .AddLegalParty(true, PersonTypeCodeType.J, ResidenceTypeCodeType.E, "79065414H",
+                .AddLegalParty(true, ResidenceTypeCodeType.E, "79065414H",
                     "HexaSystems Corporation", "HexaSystems Address", "28019", "Madrid", "Madrid", CountryType.ESP)
                 .AddIndividualParty(false, ResidenceTypeCodeType.E, "3422357Y", "Carlos",
                     "Mendible", "Carlos Address", "28019", "Madrid", "Madrid", CountryType.ESP)
