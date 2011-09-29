@@ -23,13 +23,21 @@ namespace nFacturae.Facturae32
 {
     public partial class InvoiceLineType
     {
+        private void _UpdateTotals()
+        {
+            var totalDiscountsAndRebates = this.DiscountsAndRebates != null ? this.DiscountsAndRebates.Sum(i => i.DiscountAmount.Value) : 0;
+            var totalCharges = this.Charges != null ? this.Charges.Sum(i => i.ChargeAmount.Value) : 0;
+            this.GrossAmount = new DoubleSixDecimalType(this.TotalCost.Value - totalDiscountsAndRebates + totalCharges); 
+        }
+
         public InvoiceLineType Item(string itemDescription, double quantity, double unitPriceWithoutTax)
         {
             this.ItemDescription = itemDescription;
             this.Quantity = quantity;
             this.UnitPriceWithoutTax = new DoubleSixDecimalType(unitPriceWithoutTax);
             this.TotalCost =  new DoubleSixDecimalType(quantity * unitPriceWithoutTax);
-            this.GrossAmount = new DoubleSixDecimalType(this.TotalCost.Value); // TotalCost - DiscountAmount + ChargeAmount 
+
+            _UpdateTotals();
 
             return this;
         }
@@ -48,6 +56,32 @@ namespace nFacturae.Facturae32
             this.TaxesOutputs = this.TaxesOutputs.Concat(new InvoiceLineTypeTax[] { tax }).ToArray();
 
             return this;
+        }
+
+        public InvoiceLineType AddDiscount(double amount, string reason, double? rate)
+        {
+            if (this.DiscountsAndRebates == null)
+                this.DiscountsAndRebates = new DiscountType[] { };
+
+            var discount = new DiscountType();
+            discount.DiscountAmount = new DoubleSixDecimalType(amount);
+            discount.DiscountReason = reason;
+            if (rate.HasValue)
+            {
+                discount.DiscountRate = new DoubleFourDecimalType(rate.Value);
+                discount.DiscountRateSpecified = true;
+            }
+
+            this.DiscountsAndRebates = this.DiscountsAndRebates.Concat(new DiscountType[] { discount }).ToArray();
+
+            _UpdateTotals();
+
+            return this;
+        }
+
+        public InvoiceLineType AddDiscount(double amount, string reason)
+        {
+            return AddDiscount(amount, reason, null);
         }
     }
 }

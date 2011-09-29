@@ -96,8 +96,10 @@ namespace nFacturae.Facturae32
 
             this.InvoiceTotals.TotalTaxOutputs.Value = this.TaxesOutputs.Sum(to => to.TaxAmount.TotalAmount.Value);
             this.InvoiceTotals.InvoiceTotal.Value = this.Items.Sum(i => i.GrossAmount.Value) + this.InvoiceTotals.TotalTaxOutputs.Value;
+            this.InvoiceTotals.TotalGeneralDiscounts.Value = this.Items.Where(i => i.DiscountsAndRebates != null).SelectMany(i => i.DiscountsAndRebates).Sum(i => i.DiscountAmount.Value);
+            this.InvoiceTotals.TotalGeneralSurcharges.Value = this.Items.Where(i => i.Charges != null).SelectMany(i => i.Charges).Sum(d => d.ChargeAmount.Value);
             this.InvoiceTotals.TotalGrossAmount.Value = this.Items.Sum(i => i.GrossAmount.Value);
-            this.InvoiceTotals.TotalGrossAmountBeforeTaxes.Value = this.Items.Sum(i => i.GrossAmount.Value);
+            this.InvoiceTotals.TotalGrossAmountBeforeTaxes.Value = this.InvoiceTotals.TotalGrossAmount.Value;
             this.InvoiceTotals.TotalOutstandingAmount.Value = this.InvoiceTotals.InvoiceTotal.Value;
             this.InvoiceTotals.TotalExecutableAmount.Value = this.InvoiceTotals.InvoiceTotal.Value;
 
