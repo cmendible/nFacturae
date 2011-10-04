@@ -73,18 +73,18 @@ namespace nFactura.Tests
         }
 
         [Test]
-        public void Factuare_To_UNeDoc()
+        public void Factuare_To_Html()
         {
             var fe32 = Factuare_Create_Simple_Invoice_And_validate();
 
             var logoPath = "https://a248.e.akamai.net/assets.github.com/images/modules/header/logov6-hover.png";
 
-            var unedocHtml = fe32.ToUNeDoc(logoPath);
+            var html = fe32.ToHtml(logoPath);
 
-            Assert.IsNotNull(unedocHtml);
-            Assert.IsNotEmpty(unedocHtml);
+            Assert.IsNotNull(html);
+            Assert.IsNotEmpty(html);
 
-            TestLog.AttachHtml("invoice_unedoc", unedocHtml);
+            TestLog.AttachHtml("invoice_html", html);
         }
 
         [Test]

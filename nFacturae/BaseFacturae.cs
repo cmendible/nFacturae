@@ -113,6 +113,10 @@ namespace nFacturae
             if (!string.IsNullOrEmpty(logoPath))
                 xslArgs.AddParam("logoPath", string.Empty, logoPath);
 
+            var numberFormatInfo = new System.Globalization.CultureInfo("es-ES").NumberFormat;
+            var numberFormat = string.Format("###{0}###{1}00", numberFormatInfo.NumberGroupSeparator, numberFormatInfo.CurrencyDecimalSeparator);
+            xslArgs.AddParam("numberFormat", string.Empty, numberFormat);
+            
             var invoiceBytes = System.Text.UTF8Encoding.UTF8.GetBytes(this.ToString());
             var xslBytes = System.Text.UTF8Encoding.UTF8.GetBytes(xsl);
 
@@ -131,16 +135,16 @@ namespace nFacturae
             }
         }
 
-        public string ToUNeDoc(string logoPath)
+        public string ToHtml(string logoPath)
         {
-            return System.Text.UTF8Encoding.UTF8.GetString(_Transform(Properties.Resource.facturae_unedocs, logoPath));
+            return System.Text.UTF8Encoding.UTF8.GetString(_Transform(Properties.Resource.facturae_html, logoPath));
         }
 
         public string Transform(string xsl, string logoPath)
         {
             var xslToUse = xsl;
             if (string.IsNullOrEmpty(xslToUse))
-                xslToUse = Properties.Resource.facturae_unedocs;
+                xslToUse = Properties.Resource.facturae_html;
 
             return System.Text.UTF8Encoding.UTF8.GetString(_Transform(xsl, logoPath));
         }
@@ -165,7 +169,7 @@ namespace nFacturae
 
         public MemoryStream ToPdf(string logoPath)
         {
-            return _ToPdf(Properties.Resource.facturae_unedocs, logoPath, "");
+            return _ToPdf(Properties.Resource.facturae_html, logoPath, "");
         }
 
         public void ValidateSchema()

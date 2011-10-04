@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace nFacturae.Properties
-{
-
-
+namespace nFacturae.Properties {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -62,23 +62,22 @@ namespace nFacturae.Properties
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+        ///&lt;!-- DWXMLSource=&quot;facturae.xml&quot; --&gt;
         ///
         ///&lt;!DOCTYPE xsl:stylesheet [
         ///  &lt;!ENTITY nbsp &quot;&amp;#160;&quot;&gt;
         ///]&gt;
         ///
-        ///&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:java=&quot;http://xml.apache.org/xslt/java&quot;
-        ///  extension-element-prefixes=&quot;java&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
+        ///&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:java=&quot;http://xml.apache.org/xslt/java&quot; extension-element-prefixes=&quot;java&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;
         ///  &lt;xsl:decimal-format grouping-separator=&quot;.&quot; decimal-separator=&quot;,&quot;/&gt;
         ///  &lt;xsl:output method=&quot;html&quot; indent=&quot;yes&quot;/&gt;
-        ///
         ///  &lt;!-- Declaración del atributo prn-attrs --&gt;
         ///  &lt;xsl:attribute-set name=&quot;prn-attrs&quot;&gt;
-        ///    &lt;xsl:attribute name=&quot;style&quot;&gt;font-family [rest of string was truncated]&quot;;.
+        ///    &lt;xsl:at [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string facturae_unedocs {
+        internal static string facturae_html {
             get {
-                return ResourceManager.GetString("facturae_unedocs", resourceCulture);
+                return ResourceManager.GetString("facturae_html", resourceCulture);
             }
         }
         
