@@ -18,6 +18,7 @@
 #endregion
 
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -131,7 +132,12 @@ namespace nFacturae
                 {
                     xslt.Transform(XmlReader.Create(memXml, settings), xslArgs, XmlWriter.Create(memOut, xslt.OutputSettings));
                 }
-                return memOut.ToArray();
+
+                var bytes = memOut.ToArray();
+                if (bytes.Length > 2 && bytes[0] == 0xEF && bytes[1] == 0xBB && bytes[2] == 0xBF)
+                    bytes = bytes.Skip(3).ToArray();
+
+                return bytes;
             }
         }
 
