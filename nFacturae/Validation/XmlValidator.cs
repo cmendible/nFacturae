@@ -64,7 +64,7 @@ namespace nFacturae.Validation
 
             // Validate XML data
             while (_reader.Read()) ;
-            _reader.Close();
+                _reader.Close();
 
             // Raise exception, if XML validation fails
             if (_errorsCount > 0)
