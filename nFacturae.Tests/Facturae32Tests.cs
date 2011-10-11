@@ -57,8 +57,8 @@ namespace nFactura.Tests
                 {
                     i.HeatherAndIssueData("231418", InvoiceDocumentTypeType.FC,
                         InvoiceClassType.OO, DateTime.Now, CurrencyCodeType.EUR, LanguageCodeType.es)
-                    .AddLine(l => l.Item("Item Description", 1, 2000).AddTax(TaxTypeCodeType.Item01, 16, 1800).AddDiscount(200, "YES", 10))
-                    .AddLine(l => l.Item("Item Description 2", 1, 100).AddTax(TaxTypeCodeType.Item01, 16, 100));
+                    .AddLine(l => l.Item("Item Description", 1, 1000).AddTax(TaxTypeCodeType.Item01, 18).AddDiscount(100, "YES", 10))
+                    .AddLine(l => l.Item("Item Description 2", 2, 100).AddTax(TaxTypeCodeType.Item01, 18));
                 });
 
             Assert.IsNotNull(fe32);

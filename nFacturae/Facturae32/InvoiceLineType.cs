@@ -42,10 +42,12 @@ namespace nFacturae.Facturae32
             return this;
         }
 
-        public InvoiceLineType AddTax(TaxTypeCodeType taxTypeCode, double taxRate, double taxableBase)
+        public InvoiceLineType AddTax(TaxTypeCodeType taxTypeCode, double taxRate)
         {
             if (this.TaxesOutputs == null)
                 this.TaxesOutputs = new InvoiceLineTypeTax[] { };
+
+            var taxableBase = this.UnitPriceWithoutTax.Value * this.Quantity;
 
             var tax = new InvoiceLineTypeTax();
             tax.TaxTypeCode = taxTypeCode;
