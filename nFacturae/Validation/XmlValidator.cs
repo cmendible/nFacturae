@@ -33,7 +33,7 @@ namespace nFacturae.Validation
         private static int _errorsCount;
 
         // Validation Error Message
-        private static string _errorMessage = "";
+        private static string _errorMessage = string.Empty;
 
         private static void validationHandler(object sender, ValidationEventArgs args)
         {
@@ -43,6 +43,9 @@ namespace nFacturae.Validation
 
         public static void Validate(byte[] xmlDoc, XmlSchemaSet schemas)
         {
+            _errorsCount = 0;
+            _errorMessage = string.Empty;
+
             // Declare local objects
             XmlTextReader _XMLReader = null;
             XmlReaderSettings _settings = null;
